@@ -1,0 +1,33 @@
+* {
+    -webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+body {
+    background: #b3dbe8;
+    color: #000;
+    }
+
+
+    h1 {
+    
+    margin: 0;
+    font-family: Catamaran, "Helvetica Neue", Helvetica, sans-serif; /*   add fonts here   */
+}
+
+@media (max-width: 700px) {
+
+  p{
+    float: none;
+    width: 80%;
+    margin: 0;
+  }
+    #container{
+      margin: 0;
+    }
+    #something{
+      margin: 0;
+
+    }
+}

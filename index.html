@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"> </script>
+        <script src="js/highcharts.js"></script>
+<script src="js/themes/dark-unica.js"></script>
+</head>
+<body>
+
+<h1>Wages and Salaries by Industry 2008-2015</h1>
+
+
+<div id="container" style="width:100%; height:400px;"></div>
+<script>
+$(function() {
+  $('#container').highcharts({
+    title: {
+      text: 'Wages and Salaries by Industry',
+      x: -20 //center
+    },
+    subtitle: {
+      text: 'Source: http://www.bea.gov',
+      x: -20
+    },
+    xAxis: {
+      categories: ['2008', '2009', '2010', '2011', '2012', '2013',
+        '2014', '2015'
+      ]
+    },
+    yAxis: {
+      title: {
+        text: 'Wages/Salaries (Millions)'
+      },
+      plotLines: [{
+        value: 0,
+        width: 1,
+        color: '#808080'
+      }]
+    },
+
+    legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle',
+      borderWidth: 0
+    },
+    series: [{
+      name: 'Agriculture, forestry, fishing, and hunting',
+      data: [34872, 34194, 34215, 34027, 39110, 40342, 41625, 44153]
+    }, {
+      name: 'Educational services',
+      data: [108312, 113484, 118374, 123912, 128961, 132971, 138496, 143807]
+    }, {
+      name: 'Real estate and rental and leasing',
+      data: [95220, 87361, 87927, 92331, 98383, 102567, 110046, 117371]
+    }, {
+      name: 'Arts, entertainment, and recreation',
+      data: [69669, 67150, 68255, 70154, 73894, 76357, 81049, 86513]
+    }]
+  });
+});
+</script>
+<p>
+The chart data came from the United States Bureau of Economic Analysis: <a href="http://www.bea.gov/iTable/iTable.cfm?ReqID=9&step=1#reqid=9&step=3&isuri=1&903=189" target="">bea.gov.</a>
+</p>
+
+  <p>
+    Charts created by Ryan Summers.
+  The chart above is looking at the growth over time of the average wages and salaries of individuals working in certain fields in the United States from 2008 to 2015. The categories are meant to show the difference between indoor and outdoor jobs. The chart below is showing the number of murders in each state compared to the overall number of crimes in that state for the year 2014. The data was collected from FBI crime data.
+</p>
+
+<h1>Murders by state (States beginning with the letters A through I)</h1>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="something" style="height: 400px; min-width: 310px; max-width: 600px; margin: 0 auto"></div>
+<script>
+$(function() {
+  $('#something').highcharts({
+
+    chart: {
+      type: 'bubble',
+      plotBorderWidth: 1,
+      zoomType: 'xy'
+    },
+
+    legend: {
+      enabled: false
+    },
+
+    title: {
+      text: 'Number of violent crimes in each state (2014)'
+    },
+
+    subtitle: {
+      text: 'Source: <a href="https://ucr.fbi.gov/crime-in-the-u.s/2014/crime-in-the-u.s.-2014/tables/table-5">FBI Crime Data</a>'
+    },
+
+    xAxis: {
+      gridLineWidth: 1,
+      title: {
+        text: 'Number of crimes'
+      },
+      labels: {
+        format: '{value}'
+      },
+
+    },
+
+    yAxis: {
+      startOnTick: false,
+      endOnTick: false,
+      title: {
+        text: 'Number of murders'
+      },
+      labels: {
+        format: '{value} '
+      },
+      maxPadding: 0.2,
+
+    },
+
+    tooltip: {
+      useHTML: true,
+      headerFormat: '<table>',
+      pointFormat: '<tr><th colspan="2"><h3>{point.state}</h3></th></tr>' +
+        '<tr><th>Violent Crimes:</th><td>{point.x}</td></tr>' +
+        '<tr><th>Murder:</th><td>{point.y}</td></tr>',
+      footerFormat: '</table>',
+      followPointer: true
+    },
+
+    plotOptions: {
+      series: {
+        dataLabels: {
+          enabled: true,
+          format: '{point.name}'
+        }
+      }
+    },
+
+    series: [{
+      data: [{
+        x: 20727,
+        y: 276,
+        name: 'ALA',
+        state: 'Alabama'
+      }, {
+        x: 4684,
+        y: 41,
+        name: 'ALK',
+        state: 'Alaska'
+      }, {
+        x: 26916,
+        y: 319,
+        name: 'ARI',
+        state: 'Arizona'
+      }, {
+        x: 14243,
+        y: 165,
+        name: 'ARK',
+        state: 'Arkansas'
+      }, {
+        x: 153709,
+        y: 1699,
+        name: 'CAL',
+        state: 'California'
+      }, {
+        x: 16554,
+        y: 151,
+        name: 'COL',
+        state: 'Colorado'
+      }, {
+        x: 8522,
+        y: 86,
+        name: 'CON',
+        state: 'Connecticut'
+      }, {
+        x: 8199,
+        y: 105,
+        name: 'DC',
+        state: 'District of Columbia'
+      }, {
+        x: 4576,
+        y: 54,
+        name: 'DEL',
+        state: 'Delaware'
+      }, {
+        x: 107521,
+        y: 1149,
+        name: 'FL',
+        state: 'Florida'
+      }, {
+        x: 38097,
+        y: 580,
+        name: 'GA',
+        state: 'Georgia'
+      }, {
+        x: 3680,
+        y: 26,
+        name: 'HAW',
+        state: 'Hawaii'
+      }, {
+        x: 3468,
+        y: 32,
+        name: 'ID',
+        state: 'Idaho'
+      }, {
+        x: 47663,
+        y: 685,
+        name: 'IL',
+        state: 'Illinois'
+      }, {
+        x: 24099,
+        y: 330,
+        name: 'IN',
+        state: 'Indiana'
+      },
+      {
+        x: 8497,
+        y: 60,
+        name: 'IO',
+        state: 'Iowa'
+      }]
+    }]
+
+  });
+});
+</script>
+<p>
+The chart data came from the FBI Uniform Crime Reporting database: <a href="https://ucr.fbi.gov/crime-in-the-u.s/2014/crime-in-the-u.s.-2014/tables/table-5" target="">Data located here.</a>
+</p>
+
+</body>
+</html>
